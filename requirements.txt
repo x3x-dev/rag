@@ -1,0 +1,14 @@
+llama-index
+llama-index-llms-openai
+llama-index-embeddings-huggingface
+llama-index-retrievers-bm25
+openai
+python-dotenv
+scikit-learn
+numpy<2
+torch
+sentence-transformers
+fastapi
+uvicorn[standard]
+pydantic
+sentencepiece

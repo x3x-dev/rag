@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Code block enhancements */
+.code-block {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  line-height: 1.5rem;
+}
+
+/* Smooth scrolling for chat */
+.chat-container {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.chat-container::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 0.25rem;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.8);
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  
+}
