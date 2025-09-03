@@ -1,0 +1,26 @@
+
+# SAVING THESE HERE FOR NOW
+# Checking running process
+
+sudo lsof -i :8000
+kill -9 PID
+
+sudo lsof -i :5173
+
+# Start apps
+nohup npm run dev -- --host 0.0.0.0 --port 5173 --strictPort > web.log 2>&1 &
+nohup python3 main.py > app.log 2>&1 &
+
+# Tunnels
+nohup cloudflared tunnel --url http://localhost:5173 > web_tunnel.log 2>&1 &
+nohup cloudflared tunnel --url http://localhost:8000 > app_tunnel.log 2>&1 &
+
+
+# URLS
+
+frontend
+https://sussex-behalf-stay-thoroughly.trycloudflare.com/
+backend
+https://jimmy-dive-mauritius-settlement.trycloudflare.com  
+
+
