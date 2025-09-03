@@ -3,6 +3,9 @@ import ChatHeader from './components/chat-header';
 import ChatMessage from './components/chat-message';
 import ChatInput from './components/chat-input';
 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
 // Welcome message with examples
 const initialMessages = [
   {
@@ -32,7 +35,7 @@ function App() {
   useEffect(() => {
     const loadChatHistory = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/chat/history');
+        const response = await fetch(`${API_BASE_URL}/api/chat/history`);
         if (response.ok) {
           const data = await response.json();
           if (data.messages && data.messages.length > 0) {
@@ -67,7 +70,7 @@ function App() {
 
   const handleClearHistory = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/chat/history', {
+      const response = await fetch(`${API_BASE_URL}/api/chat/history`, {
         method: 'DELETE',
       });
       
@@ -96,7 +99,7 @@ function App() {
 
     try {
       // Call backend API
-      const response = await fetch('http://localhost:8000/api/chat', {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
